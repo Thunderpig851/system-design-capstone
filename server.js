@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const db = require('./db/index.js')
-//const SQL = require('sql-template-strings')
 
 app.use(express.static('dist'));
 app.use(express.json());
@@ -172,7 +171,6 @@ app.post('/reviews', (req, res) => {
   const response = null;
   const helpfulness =0;
   const photos = req.body.photos;
-  //characteristics / characteristics_reviews
   const characteristics = req.body.characteristics;
 
   db.query(`INSERT INTO reviews(product_id,
@@ -212,7 +210,6 @@ app.post('/reviews', (req, res) => {
         })
     })
     .catch(err => {
-      console.log(err.stack);
       res.sendStatus(500);
     });
 });

@@ -1,10 +1,13 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { check, sleep } from 'k6';
+import {Rate} from 'k6/metrics';
 
 export const options = {
   vus: 30,
   duration: '10s',
 }
+
+export const errorRate = new Rate('error')
 
 export default function () {
   const data ={
@@ -23,8 +26,10 @@ export default function () {
   };
 
   let url = `http://localhost:3000/reviews?product_id=37413`
-  let res = http.post(url, {data}, { headers: { 'Content-Type': 'application/json' } })
-
+  //let res = http.post(url, data, { headers: { 'Content-Type': 'application/json' } })
+  check(http.post(url, data,  { headers: { 'Content-Type': 'application/json' } }), {
+    'status is 201': (r) => r.status == 201,
+  }) || errorRate.add(1);
 
   sleep(0.001);
 }
