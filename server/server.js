@@ -11,6 +11,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+app.get('/loaderio-118cd2c32e42d57e6c702423d9c7fe21', (req, res) => {
+  .then(res => {
+    res.sendFile(path.join(__dirname, 'server', 'loaderio-118cd2c32e42d57e6c702423d9c7fe21.txt' ));
+  })
+  .catch(err => {
+    res.send(500);
+  })
+});
+
 //Complete -sub 15ms
 app.put('/reviews/report', (req, res) => {
 
