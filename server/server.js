@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/loaderio-118cd2c32e42d57e6c702423d9c7fe21', (req, res) => {
-  res.sendFile(path.join(__dirname, 'server', 'loaderio-118cd2c32e42d57e6c702423d9c7fe21.txt' ));
+  console.log(path.join(__dirname, 'loaderio-118cd2c32e42d57e6c702423d9c7fe21.txt'));
+  res.sendFile(path.join(__dirname, 'loaderio-118cd2c32e42d57e6c702423d9c7fe21.txt' ));
 });
 
 //Complete -sub 15ms
