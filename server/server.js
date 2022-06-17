@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const db = require('./db/index.js')
+const db = require('../db/index.js')
 
 app.use(express.static('dist'));
 app.use(express.json());
@@ -12,12 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/loaderio-118cd2c32e42d57e6c702423d9c7fe21', (req, res) => {
-  .then(res => {
     res.sendFile(path.join(__dirname, 'server', 'loaderio-118cd2c32e42d57e6c702423d9c7fe21.txt' ));
-  })
-  .catch(err => {
-    res.send(500);
-  })
 });
 
 //Complete -sub 15ms
