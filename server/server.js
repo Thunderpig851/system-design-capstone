@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.get('/loaderio-5486dcdddad9fa34f74d5798ce75a8f3', (req, res) => {
-  res.sendFile(path.join(__dirname, 'loaderio-5486dcdddad9fa34f74d5798ce75a8f3.txt'));
+app.get('/loaderio-1ac759982375cab3034dfb8b47acdec8', (req, res) => {
+  res.sendFile(path.join(__dirname, 'loaderio-1ac759982375cab3034dfb8b47acdec8.txt'));
 });
 
 //Complete -sub 15ms
