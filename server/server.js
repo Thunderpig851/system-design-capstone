@@ -219,6 +219,6 @@ app.post('/reviews', (req, res) => {
 });
 
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server listening at hhttp://ec2-3-131-26-88.us-east-2.compute.amazonaws.com::${process.env.PORT}`)
+app.listen(process.env.SERVER, () =>
+  console.log(`Server listening at hhttp://ec2-3-131-26-88.us-east-2.compute.amazonaws.com::${process.env.SERVER}`)
 );
